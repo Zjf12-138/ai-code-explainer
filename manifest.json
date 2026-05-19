@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "AI 代码解释器",
+  "version": "1.0.0",
+  "description": "选中代码一键调用大模型进行解释，支持流式输出",
+  "permissions": ["contextMenus", "storage", "activeTab"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "AI 代码解释器"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "ai-code-explainer@yourname.dev",
+      "strict_min_version": "109.0"
+    }
+  }
+}

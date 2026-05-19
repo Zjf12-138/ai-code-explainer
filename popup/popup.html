@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI 代码解释器 - 设置</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🤖 AI 代码解释器</h1>
+      <p class="subtitle">使用 DeepSeek / 兼容 OpenAI 格式的 API</p>
+    </div>
+
+    <div class="section">
+      <label for="api-key">API Key</label>
+      <input 
+        type="password" 
+        id="api-key" 
+        placeholder="请输入你的 API Key（sk-...）" 
+        autocomplete="off"
+      />
+      <div class="hint">Key 仅保存在本地浏览器中，不会上传到任何服务器</div>
+    </div>
+
+    <div class="section">
+      <label for="api-base">API Base URL（可选）</label>
+      <input 
+        type="text" 
+        id="api-base" 
+        placeholder="https://api.deepseek.com/v1" 
+        value="https://api.deepseek.com/v1"
+      />
+      <div class="hint">默认使用 DeepSeek API，可替换为其他兼容 OpenAI 格式的服务</div>
+    </div>
+
+    <div class="actions">
+      <button id="save-btn" class="btn primary">💾 保存设置</button>
+      <button id="clear-btn" class="btn secondary">🗑️ 清除</button>
+    </div>
+
+    <div id="status" class="status"></div>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>
